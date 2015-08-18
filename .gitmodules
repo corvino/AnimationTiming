@@ -1,0 +1,3 @@
+[submodule "Submodules/BezierWidget"]
+	path = Submodules/BezierWidget
+	url = git@github.com:corvino/BezierWidget.git

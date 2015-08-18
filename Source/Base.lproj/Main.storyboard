@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -148,8 +148,8 @@
                                                 <action selector="paste:" target="Ady-hI-5gd" id="UvS-8e-Qdg"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Paste and Match Style" keyEquivalent="V" id="WeT-3V-zwk">
-                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                        <menuItem title="Paste and Match Style" keyEquivalent="v" id="WeT-3V-zwk">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
                                                 <action selector="pasteAsPlainText:" target="Ady-hI-5gd" id="cEh-KX-wJQ"/>
                                             </connections>
@@ -641,12 +641,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Timings" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -657,25 +657,173 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="Zbg-mB-Mjj" kind="relationship" relationship="window.shadowedContentViewController" id="ter-8Y-cDp"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Timings Split View Controller-->
+        <scene sceneID="znv-dE-s0z">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <splitViewController id="Zbg-mB-Mjj" customClass="TimingsSplitViewController" customModule="Timings" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="Wul-Fb-BHZ"/>
+                        <splitViewItem id="nEz-ae-KOj"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="Nbf-19-Wna">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                    </splitView>
+                    <connections>
+                        <outlet property="timingCurveSplitViewItem" destination="Wul-Fb-BHZ" id="o2l-Lq-rk2"/>
+                        <segue destination="QRA-yg-xfM" kind="relationship" relationship="splitItems" id="lJu-CB-ySu"/>
+                        <segue destination="z81-Lb-tgv" kind="relationship" relationship="splitItems" id="4Ac-KH-zka"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="qQo-sX-Pla" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="738"/>
+        </scene>
+        <!--Example View Controller-->
+        <scene sceneID="6Ia-mr-ABA">
+            <objects>
+                <viewController id="z81-Lb-tgv" customClass="ExampleViewController" customModule="Timings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="4Io-Jf-tMJ">
+                        <rect key="frame" x="0.0" y="0.0" width="482" height="342"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rjc-K0-Zgk">
+                                <rect key="frame" x="20" y="121" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="TM9-db-Vmf"/>
+                                    <constraint firstAttribute="height" constant="100" id="b9c-ZV-uFn"/>
+                                </constraints>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="afN-8S-fM8">
+                                        <connections>
+                                            <action selector="targetClicked:" target="z81-Lb-tgv" id="bHB-L0-8uH"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Rjc-K0-Zgk" secondAttribute="centerY" id="Hn0-sT-uiH"/>
+                            <constraint firstItem="Rjc-K0-Zgk" firstAttribute="leading" secondItem="4Io-Jf-tMJ" secondAttribute="leading" constant="20" id="yIG-DS-X0r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="leftConstraint" destination="yIG-DS-X0r" id="fB4-sH-vJl"/>
+                        <outlet property="targetView" destination="Rjc-K0-Zgk" id="xka-Da-M53"/>
+                    </connections>
+                </viewController>
+                <customObject id="ZDp-ZJ-bFb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765" y="1041"/>
+        </scene>
+        <!--Timing Curve View Controller-->
+        <scene sceneID="B2U-zT-bTv">
+            <objects>
+                <viewController id="QRA-yg-xfM" customClass="TimingCurveViewController" customModule="Timings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="b1E-Xf-aQJ">
+                        <rect key="frame" x="0.0" y="0.0" width="482" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="WC6-Ka-ChE">
+                                <rect key="frame" x="0.0" y="0.0" width="482" height="30"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fDB-vl-afK">
+                                        <rect key="frame" x="10" y="6" width="104" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Zap-3Z-pWg"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Control Point 1" id="xyx-tv-3nQ">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JTM-WJ-glR">
+                                        <rect key="frame" x="170" y="2" width="143" height="26"/>
+                                        <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="M0x-6o-f3q" id="nnd-YB-rp6">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="od3-e3-3eQ">
+                                                <items>
+                                                    <menuItem title="Linear" id="Bcn-bO-Wua"/>
+                                                    <menuItem title="Ease-In" id="VMS-li-tYZ"/>
+                                                    <menuItem title="Ease-Out" id="h6j-Wj-jd7"/>
+                                                    <menuItem title="Ease-In Ease-Out" id="p64-Pj-gfy">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="Default" state="on" id="M0x-6o-f3q">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                    <menuItem title="Custom" id="8Yi-uK-aE2">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <action selector="curvePopUpChanged:" target="QRA-yg-xfM" id="qZN-JB-5KJ"/>
+                                        </connections>
+                                    </popUpButton>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="09T-Gu-1Tj">
+                                        <rect key="frame" x="369" y="7" width="104" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="CXN-LK-7h4"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Control Point 2" id="Ec1-n6-let">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="09T-Gu-1Tj" secondAttribute="trailing" constant="11" id="EnT-Ox-uGh"/>
+                                    <constraint firstAttribute="centerY" secondItem="09T-Gu-1Tj" secondAttribute="centerY" id="GP0-SJ-7Il"/>
+                                    <constraint firstItem="fDB-vl-afK" firstAttribute="leading" secondItem="WC6-Ka-ChE" secondAttribute="leading" constant="12" id="GhE-my-6g7"/>
+                                    <constraint firstAttribute="centerX" secondItem="JTM-WJ-glR" secondAttribute="centerX" id="JyS-7C-cT9"/>
+                                    <constraint firstItem="09T-Gu-1Tj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JTM-WJ-glR" secondAttribute="trailing" id="PvN-Mn-oca"/>
+                                    <constraint firstAttribute="centerY" secondItem="JTM-WJ-glR" secondAttribute="centerY" id="VPY-6H-GSf"/>
+                                    <constraint firstAttribute="centerY" secondItem="fDB-vl-afK" secondAttribute="centerY" id="dQM-KG-pFZ"/>
+                                    <constraint firstItem="JTM-WJ-glR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fDB-vl-afK" secondAttribute="trailing" id="i4l-m4-Kaa"/>
+                                </constraints>
+                            </customView>
+                            <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YrA-Mi-DRC" customClass="BezierWidget" customModule="Timings" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="30" width="482" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="9pK-2u-OEz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="awy-Bh-ej3"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="WC6-Ka-ChE" secondAttribute="bottom" id="6fr-YU-5Rn"/>
+                            <constraint firstAttribute="trailing" secondItem="YrA-Mi-DRC" secondAttribute="trailing" id="B5Q-4o-0ie"/>
+                            <constraint firstAttribute="bottom" secondItem="YrA-Mi-DRC" secondAttribute="bottom" constant="30" id="HGZ-OO-gnS"/>
+                            <constraint firstItem="YrA-Mi-DRC" firstAttribute="top" secondItem="b1E-Xf-aQJ" secondAttribute="top" id="HIj-1r-inZ"/>
+                            <constraint firstItem="WC6-Ka-ChE" firstAttribute="leading" secondItem="b1E-Xf-aQJ" secondAttribute="leading" id="RYP-fE-6Fs"/>
+                            <constraint firstItem="YrA-Mi-DRC" firstAttribute="leading" secondItem="b1E-Xf-aQJ" secondAttribute="leading" id="SXg-dn-WOt"/>
+                            <constraint firstAttribute="trailing" secondItem="WC6-Ka-ChE" secondAttribute="trailing" id="mDI-59-3hJ"/>
+                            <constraint firstItem="WC6-Ka-ChE" firstAttribute="top" secondItem="YrA-Mi-DRC" secondAttribute="bottom" id="rDP-yx-VIc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bezierWidget" destination="YrA-Mi-DRC" id="ug1-X0-zSD"/>
+                        <outlet property="cp1TextField" destination="fDB-vl-afK" id="cGh-CA-Odo"/>
+                        <outlet property="cp2TextField" destination="09T-Gu-1Tj" id="jRH-NQ-OM9"/>
+                        <outlet property="curvePopUp" destination="JTM-WJ-glR" id="hss-gU-NHn"/>
+                        <outlet property="customTimingMenuItem" destination="8Yi-uK-aE2" id="1Rh-bT-D8a"/>
+                    </connections>
+                </viewController>
+                <customObject id="8WT-bJ-j1r" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765" y="598"/>
         </scene>
     </scenes>
 </document>

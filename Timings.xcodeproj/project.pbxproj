@@ -8,18 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		278336611B027FE50087C6F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278336601B027FE50087C6F1 /* AppDelegate.swift */; };
-		278336631B027FE50087C6F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278336621B027FE50087C6F1 /* ViewController.swift */; };
+		278336631B027FE50087C6F1 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278336621B027FE50087C6F1 /* ExampleViewController.swift */; };
 		278336651B027FE50087C6F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278336641B027FE50087C6F1 /* Images.xcassets */; };
 		278336681B027FE50087C6F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278336661B027FE50087C6F1 /* Main.storyboard */; };
+		278336821B0282030087C6F1 /* BezierWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278336801B0282030087C6F1 /* BezierWidget.swift */; };
+		278336831B0282030087C6F1 /* NSBezierPathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278336811B0282030087C6F1 /* NSBezierPathExtensions.swift */; };
+		278336851B0283840087C6F1 /* TimingCurveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278336841B0283840087C6F1 /* TimingCurveViewController.swift */; };
+		27ECF92A1B83D88700DB6637 /* TimingsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ECF9291B83D88700DB6637 /* TimingsSplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2783365B1B027FE50087C6F1 /* Timings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2783365F1B027FE50087C6F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		278336601B027FE50087C6F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		278336621B027FE50087C6F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		278336621B027FE50087C6F1 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		278336641B027FE50087C6F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		278336671B027FE50087C6F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		278336801B0282030087C6F1 /* BezierWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezierWidget.swift; path = Submodules/BezierWidget/Source/BezierWidget.swift; sourceTree = "<group>"; };
+		278336811B0282030087C6F1 /* NSBezierPathExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSBezierPathExtensions.swift; path = Submodules/BezierWidget/Source/NSBezierPathExtensions.swift; sourceTree = "<group>"; };
+		278336841B0283840087C6F1 /* TimingCurveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimingCurveViewController.swift; path = Submodules/BezierWidget/Source/TimingCurveViewController.swift; sourceTree = "<group>"; };
+		27ECF9291B83D88700DB6637 /* TimingsSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingsSplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +62,10 @@
 		2783365D1B027FE50087C6F1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2783367F1B0281EE0087C6F1 /* BezierWidget */,
 				278336601B027FE50087C6F1 /* AppDelegate.swift */,
-				278336621B027FE50087C6F1 /* ViewController.swift */,
+				27ECF9291B83D88700DB6637 /* TimingsSplitViewController.swift */,
+				278336621B027FE50087C6F1 /* ExampleViewController.swift */,
 				278336661B027FE50087C6F1 /* Main.storyboard */,
 				2783365E1B027FE50087C6F1 /* Supporting Files */,
 			);
@@ -67,6 +77,17 @@
 			children = (
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2783367F1B0281EE0087C6F1 /* BezierWidget */ = {
+			isa = PBXGroup;
+			children = (
+				278336841B0283840087C6F1 /* TimingCurveViewController.swift */,
+				278336801B0282030087C6F1 /* BezierWidget.swift */,
+				278336811B0282030087C6F1 /* NSBezierPathExtensions.swift */,
+			);
+			name = BezierWidget;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				278336631B027FE50087C6F1 /* ViewController.swift in Sources */,
+				278336851B0283840087C6F1 /* TimingCurveViewController.swift in Sources */,
+				278336631B027FE50087C6F1 /* ExampleViewController.swift in Sources */,
 				278336611B027FE50087C6F1 /* AppDelegate.swift in Sources */,
+				278336831B0282030087C6F1 /* NSBezierPathExtensions.swift in Sources */,
+				27ECF92A1B83D88700DB6637 /* TimingsSplitViewController.swift in Sources */,
+				278336821B0282030087C6F1 /* BezierWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +303,7 @@
 				278336791B027FE50087C6F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
