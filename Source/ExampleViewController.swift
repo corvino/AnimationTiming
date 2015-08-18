@@ -33,8 +33,18 @@ class ExampleViewController: NSViewController {
     }
 
     override func viewWillAppear() {
-        // Would make sense to do this here, but the layer isn't reliably available.
-        targetView.layer?.backgroundColor = NSColor.redColor().CGColor
+        if (nil == targetView.layer?.sublayers) {
+            let gradient = CAGradientLayer()
+            gradient.frame = targetView.bounds
+            gradient.colors = [NSColor.lightGrayColor().CGColor, NSColor.redColor().CGColor]
+            gradient.endPoint = CGPoint(x: 0, y: 1)
+            gradient.startPoint = CGPoint(x: 1, y: 0)
+            gradient.cornerRadius = gradient.bounds.size.width / 2
+            gradient.borderWidth = 3
+            gradient.borderColor = NSColor.darkGrayColor().CGColor
+
+            targetView.layer?.addSublayer(gradient)
+        }
     }
 
     @IBAction func targetClicked(sender: AnyObject) {
