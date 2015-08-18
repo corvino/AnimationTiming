@@ -1,6 +1,6 @@
 //
-//  TimingsSplitViewController.swift
-//  Timings
+//  SplitViewController.swift
+//  AnimationTiming
 //
 //  Created by Nathan Corvino on 8/18/15.
 //  Copyright (c) 2015 Nathan Corvino. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TimingsSplitViewController : NSSplitViewController {
+class SplitViewController : NSSplitViewController {
 
     @IBOutlet weak var timingCurveSplitViewItem: NSSplitViewItem!
 

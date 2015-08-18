@@ -641,7 +641,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Timings" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AnimationTiming" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -664,10 +664,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Timings Split View Controller-->
+        <!--Split View Controller-->
         <scene sceneID="znv-dE-s0z">
             <objects>
-                <splitViewController id="Zbg-mB-Mjj" customClass="TimingsSplitViewController" customModule="Timings" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="Zbg-mB-Mjj" customClass="SplitViewController" customModule="AnimationTiming" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="Wul-Fb-BHZ"/>
                         <splitViewItem id="nEz-ae-KOj"/>
@@ -689,7 +689,7 @@
         <!--Example View Controller-->
         <scene sceneID="6Ia-mr-ABA">
             <objects>
-                <viewController id="z81-Lb-tgv" customClass="ExampleViewController" customModule="Timings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z81-Lb-tgv" customClass="ExampleViewController" customModule="AnimationTiming" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="4Io-Jf-tMJ">
                         <rect key="frame" x="0.0" y="0.0" width="482" height="342"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -726,7 +726,7 @@
         <!--Timing Curve View Controller-->
         <scene sceneID="B2U-zT-bTv">
             <objects>
-                <viewController id="QRA-yg-xfM" customClass="TimingCurveViewController" customModule="Timings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QRA-yg-xfM" customClass="TimingCurveViewController" customModule="AnimationTiming" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="b1E-Xf-aQJ">
                         <rect key="frame" x="0.0" y="0.0" width="482" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -794,7 +794,7 @@
                                     <constraint firstItem="JTM-WJ-glR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fDB-vl-afK" secondAttribute="trailing" id="i4l-m4-Kaa"/>
                                 </constraints>
                             </customView>
-                            <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YrA-Mi-DRC" customClass="BezierWidget" customModule="Timings" customModuleProvider="target">
+                            <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YrA-Mi-DRC" customClass="BezierWidget" customModule="AnimationTiming" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="30" width="482" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="9pK-2u-OEz"/>
