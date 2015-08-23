@@ -694,6 +694,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="482" height="342"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="fCk-k9-Pi4">
+                                <rect key="frame" x="0.0" y="0.0" width="482" height="342"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="UNQ-qi-rF3"/>
+                                </constraints>
+                            </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rjc-K0-Zgk">
                                 <rect key="frame" x="20" y="121" width="100" height="100"/>
                                 <constraints>
@@ -710,7 +716,11 @@
                             </customView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fCk-k9-Pi4" secondAttribute="trailing" id="299-MR-6xw"/>
                             <constraint firstAttribute="centerY" secondItem="Rjc-K0-Zgk" secondAttribute="centerY" id="Hn0-sT-uiH"/>
+                            <constraint firstItem="fCk-k9-Pi4" firstAttribute="leading" secondItem="4Io-Jf-tMJ" secondAttribute="leading" id="cqg-Ni-2pt"/>
+                            <constraint firstItem="fCk-k9-Pi4" firstAttribute="top" secondItem="4Io-Jf-tMJ" secondAttribute="top" id="ljF-ZT-O9D"/>
+                            <constraint firstAttribute="bottom" secondItem="fCk-k9-Pi4" secondAttribute="bottom" id="qYS-xv-cA2"/>
                             <constraint firstItem="Rjc-K0-Zgk" firstAttribute="leading" secondItem="4Io-Jf-tMJ" secondAttribute="leading" constant="20" id="yIG-DS-X0r"/>
                         </constraints>
                     </view>
@@ -721,14 +731,14 @@
                 </viewController>
                 <customObject id="ZDp-ZJ-bFb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="1041"/>
+            <point key="canvasLocation" x="765" y="1156"/>
         </scene>
         <!--Timing Curve View Controller-->
         <scene sceneID="B2U-zT-bTv">
             <objects>
                 <viewController id="QRA-yg-xfM" customClass="TimingCurveViewController" customModule="AnimationTiming" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="b1E-Xf-aQJ">
-                        <rect key="frame" x="0.0" y="0.0" width="482" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="482" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="WC6-Ka-ChE">
@@ -795,10 +805,10 @@
                                 </constraints>
                             </customView>
                             <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YrA-Mi-DRC" customClass="BezierWidget" customModule="AnimationTiming" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="30" width="482" height="240"/>
+                                <rect key="frame" x="0.0" y="30" width="482" height="450"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="9pK-2u-OEz"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="awy-Bh-ej3"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="450" id="awy-Bh-ej3"/>
                                 </constraints>
                             </customView>
                         </subviews>
